@@ -29,6 +29,20 @@ print(df.loc[0])
 print("------------------------------ df[df['Age']>10]")
 print(df[df['Age']>10])
 
+print("------------------------------ df.head()")
+print(df.head())
+
+print("------------------------------ df.tail()")
+print(df.tail())
+
+print("------------------------------ df.describe()")
+print(df.describe())
+
+print("------------------------------ df.info()")
+print(df.info())
+
+
+
 
 
 
