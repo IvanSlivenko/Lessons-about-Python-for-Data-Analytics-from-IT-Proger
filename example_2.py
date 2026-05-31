@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 # https://youtu.be/VBKzAfG5D0M
 
@@ -32,4 +33,21 @@ print(f"average_check: {average_check: .2f}")
 print(f"best product ID: {products_ids[best_product_index]} sales amount : {total_sales[best_product_index]}")
 print(f"worts product ID: {products_ids[worts_product_index]} sales amount : {total_sales[worts_product_index]}")
 
+dates_pd = pd.to_datetime(dates, format='%d-%m-%Y')
+print("--------------------------------------  dates_pd")
+print(dates_pd)
+
+days_of_weeks = dates_pd.day_name()
+print("-------------------------------------- days_of_weeks")
+
+print(days_of_weeks)
+
+sales_by_day = dict()
+for day, sale in zip(days_of_weeks, total_sales) :
+    if day in sales_by_day:
+        sales_by_day[day] += sale
+    else:
+        sales_by_day[day] = sale
+
+print(f"Sales per days: {sales_by_day}")
 
